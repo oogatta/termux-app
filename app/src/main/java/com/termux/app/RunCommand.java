@@ -54,7 +54,7 @@ public class RunCommand extends Service {
 
             Intent execIntent = new Intent(TermuxService.ACTION_EXECUTE, programUri);
             execIntent.setClass(this, TermuxService.class);
-            execIntent.putExtra(TermuxService.EXTRA_ARGUMENTS, intent.getStringExtra(RUN_COMMAND_ARGUMENTS));
+            execIntent.putExtra(TermuxService.EXTRA_ARGUMENTS, intent.getStringArrayExtra(RUN_COMMAND_ARGUMENTS));
             execIntent.putExtra(TermuxService.EXTRA_CURRENT_WORKING_DIRECTORY, intent.getStringExtra(RUN_COMMAND_WORKDIR));
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
